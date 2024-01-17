@@ -5,14 +5,14 @@ dotenv.config();
 
 // import server instance
 import server from "./index.js";
-import { connectToMongodb } from './src/config/connectDB.js';
+import { connectToMongodb } from './src/config/connectdb.js';
 
 // port variable
 const PORT = process.env.PORT || 8080
 
 // db URL
 const URL = process.env.DB_URL
-console.log(URL);
+// console.log(URL);
 
 // define mode
 // const DEV_MODE = process.env.DEV_MODE

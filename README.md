@@ -1,5 +1,4 @@
-# Social-Media-Application
-Full Stack Application
+# Social Media Full Stack Application
 
 ## Folder Structure
 ![Folder-Structure](./public/images/folder_structure.JPG)
@@ -46,21 +45,21 @@ Full Stack Application
 
 ### User Logout
 
-Endpoint: /api/users/logout
-Method: POST
-Description: Logout the currently logged-in user.
-Request Headers:
-Authorization: Bearer token obtained during login
-Response:
-message: Logout successful
+1. Endpoint: /api/users/logout
+2. Method: POST
+3. Description: Logout the currently logged-in user.
+4. Request Headers:
+    - Authorization: Bearer token obtained during login
+5. Response:
+    - message: Logout successful
 
 
 ### Logout from All Devices
 
-Endpoint: /api/users/logout-all-devices
-Method: POST
-Description: Logout the user from all devices.
-Request Headers:
-Authorization: Bearer token obtained during login
-Response:
-message: Logout from all devices successful
+1. Endpoint: /api/users/logout-all-devices
+2. Method: POST
+3. Description: Logout the user from all devices.
+4. Request Headers:
+    - Authorization: Bearer token obtained during login
+5. Response:
+    - message: Logout from all devices successful
