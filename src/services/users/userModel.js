@@ -25,26 +25,19 @@ const UserSchema = mongoose.Schema({
 })
 
 
-// Hash the password before saving to database
-UserSchema.pre('save', async function(next){
-    try {
-        const user = this;
-
-        // Only hash the password if it has been modified or is new
-        if(!user.isModified('password')){
-            return next()
-        };
-
-        // Hashed the password with the salt
-        const hashedPassword = await bcrypt.hash(user.password, 10);
-        user.password = hashedPassword;
-        next();
-
-    } 
-    catch (error) {
-        return next(error)
-    }
+UserSchema.pre('save', async function (next) {
+        try {
+            if (!this.isModified('password') || this.isModified('password') && typeof this.password === 'string') {
+                const hashedPassword = await bcrypt.hash(this.password, 10);
+                this.password = hashedPassword;
+            }
+            return next();
+        } 
+        catch (error) {
+            return next(error);
+        }
 });
+
 
 
 export const userModel = mongoose.model('User', UserSchema);

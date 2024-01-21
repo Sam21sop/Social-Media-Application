@@ -17,7 +17,7 @@ userRouter.get('/', (req, res) => {
 userRouter.post('/signup', userController.signUp);
 
 // user login
-userRouter.post('/sigin', userController.signIn);
+userRouter.post('/login', userController.logIn);
 
 // user logout
 userRouter.post('/logout', userController.logOut);
